@@ -95,6 +95,76 @@
   /* Fonts */
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-lora: "Lora", serif;
+
+  /* Transition Timing Functions */
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+
+  /* Keyframes */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in-down {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fade-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes draw-erase {
+    0% {
+      stroke-dashoffset: 1000;
+    }
+    40% {
+      stroke-dashoffset: 0;
+    }
+    60% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: -1000;
+    }
+  }
+
+  /* Animations */
+  --animate-fade-in-up: fade-in-up 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  --animate-fade-in-down: fade-in-down 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  --animate-fade-in-left: fade-in-left 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  --animate-fade-in-right: fade-in-right 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  --animate-draw-erase: draw-erase 6s ease-in-out infinite;
 }
 
 :root {
