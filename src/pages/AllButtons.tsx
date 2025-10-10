@@ -136,6 +136,12 @@ const AllButtons = () => {
           Custom Styling
         </h2>
         <div className="flex flex-wrap gap-4 items-center">
+          <Button variant="primary" className="animate-slide-up">
+            Animated Primary
+          </Button>
+          <Button variant="secondary" className="animate-fade-in-left">
+            Shadow Ghost
+          </Button>
           <Button variant="primary" className="rounded-full">
             Rounded Primary
           </Button>

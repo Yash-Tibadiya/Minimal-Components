@@ -171,7 +171,7 @@
 }
 
 :root {
-  --background: #F8F6F2;
+  --background: #f8f6f2;
   --foreground: #15171a;
   --primary: #798a6d;
   --accent: #d8a386;
@@ -195,7 +195,7 @@ body {
   from {
     transform: translateY(100%);
     opacity: 0;
-  }
+}
   to {
     transform: translateY(0);
     opacity: 1;
@@ -204,6 +204,16 @@ body {
 
 .animate-slide-up {
   animation: slide-up 0.3s ease-out;
+}
+
+/* Interactive Hover Animation - "Lift & Grow" */
+.interactive-card {
+  transition: transform 0.4s var(--ease-out-quint), box-shadow 0.4s var(--ease-out-quint);
+}
+
+.interactive-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
