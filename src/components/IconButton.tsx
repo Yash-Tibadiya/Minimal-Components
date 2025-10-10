@@ -7,6 +7,7 @@ interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon: ReactNode;
   iconShape?: "rounded-lg" | "rounded-full";
   iconColor?: "primary" | "accent" | "success" | "warning";
+  iconBgColor?: string;
   size?: "sm" | "md" | "lg" | "xl";
   gap?: "sm" | "md" | "lg" | "xl";
 }
@@ -16,6 +17,7 @@ const IconButton = ({
   icon,
   iconShape = "rounded-lg",
   iconColor = "accent",
+  iconBgColor,
   size = "md",
   gap = "md",
   className = "",
@@ -53,17 +55,20 @@ const IconButton = ({
     xl: "text-xl",
   };
 
+  // Determine icon background color - custom takes precedence
+  const iconBgClass = iconBgColor || iconColors[iconColor];
+
   return (
     <button
       className={`${baseStyles} ${gapSizes[gap]} ${className}`}
       {...props}
     >
       <span
-        className={`inline-flex items-center justify-center shrink-0 ${iconSizes[size]} ${iconShape} ${iconColors[iconColor]}`}
+        className={`inline-flex items-center justify-center shrink-0 ${iconSizes[size]} ${iconShape} ${iconBgClass}`}
       >
         {icon}
       </span>
-      <span className={`font-medium ${textSizes[size]}`}>{children}</span>
+      <span className={`font-medium ${!className.includes('!text-') && !className.includes('text-') ? textSizes[size] : ''}`}>{children}</span>
     </button>
   );
 };

@@ -373,9 +373,9 @@ const AllButtons = () => {
                 iconColor="primary"
                 size="md"
                 gap="md"
-                className="w-60 rounded-full px-5"
+                className="w-60 rounded-full px-5 animate-fade-in-left"
               >
-                Primary
+                Primary (animated)
               </IconButton>
               <IconButton
                 icon={<Plus />}
@@ -383,27 +383,28 @@ const AllButtons = () => {
                 iconColor="accent"
                 size="md"
                 gap="md"
-                className="!bg-sand-200 w-52 justify-between !text-3xl"
+                className="!bg-sand-200 w-52 justify-between !text-3xl text-accent-600"
               >
                 Accent
               </IconButton>
               <IconButton
                 icon={<Check />}
                 iconShape="rounded-lg"
-                iconColor="success"
+                iconBgColor="bg-green-200 text-green-700"
                 size="md"
                 gap="md"
+                className="!bg-green-50 text-green-700"
               >
                 Success
               </IconButton>
               <IconButton
                 icon={<Download />}
                 iconShape="rounded-lg"
-                iconColor="warning"
+                iconBgColor="bg-gradient-to-br from-accent-400 to-accent-700 text-white"
                 size="md"
                 gap="md"
               >
-                Warning
+                Gradient BG
               </IconButton>
             </div>
           </div>
