@@ -65,8 +65,9 @@ const Sidebar = ({ onComponentSelect, selectedComponent }: SidebarProps) => {
     <>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-md bg-foreground text-background hover:bg-foreground/90 transition-colors"
-        aria-label="Toggle menu"
+        className={`lg:hidden fixed top-4 right-4 z-50 p-2 rounded-md text-gray-700 hover:bg-sand-400 transition-colors"
+        aria-label="Toggle menu ${isOpen ? "text-white hover:text-gray-700" : ""}`
+      }
       >
         {isOpen ? <XSquareIcon /> : <MenuSquare />}
       </button>
