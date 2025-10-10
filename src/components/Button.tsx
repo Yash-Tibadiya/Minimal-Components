@@ -4,7 +4,7 @@ import { ButtonHTMLAttributes, ReactNode } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  variant?: "primary" | "secondary" | "outline" | "ghost";
+  variant?: "primary" | "secondary" | "outline" | "ghost" | "gradient";
   size?: "sm" | "md" | "lg";
 }
 
@@ -16,17 +16,19 @@ const Button = ({
   ...props
 }: ButtonProps) => {
   const baseStyles =
-    "inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
+    "inline-flex items-center justify-center rounded-md font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
 
   const variants = {
     primary:
-      "bg-foreground text-background hover:bg-foreground/90 focus-visible:ring-foreground",
+      "bg-primary-500 text-white hover:bg-primary-600 focus-visible:ring-primary-500",
     secondary:
-      "bg-foreground/10 text-foreground hover:bg-foreground/20 focus-visible:ring-foreground",
+      "bg-accent-500 text-white hover:bg-accent-600 focus-visible:ring-accent-500",
     outline:
       "border border-foreground/20 bg-transparent hover:bg-foreground/10 focus-visible:ring-foreground",
     ghost:
       "bg-transparent hover:bg-foreground/10 focus-visible:ring-foreground",
+    gradient:
+      "bg-gradient-to-b from-primary-400 to-primary-500 text-white hover:from-primary-500 hover:to-primary-600 focus-visible:ring-primary-500",
   };
 
   const sizes = {

@@ -33,6 +33,27 @@ const AllButtons = () => {
         </div>
       </section>
 
+      {/* Gradient Buttons */}
+      <section className="mb-12 bg-white p-6 rounded-md shadow-sm border border-sand-300">
+        <h2 className="text-2xl font-semibold mb-4 text-primary-700 font-lora">
+          Gradient Buttons
+        </h2>
+        <div className="flex flex-wrap gap-4 items-center">
+          <Button variant="gradient" size="sm">
+            Small Gradient
+          </Button>
+          <Button variant="gradient" size="md">
+            Medium Gradient
+          </Button>
+          <Button variant="gradient" size="lg">
+            Large Gradient
+          </Button>
+          <Button variant="gradient" size="md" disabled>
+            Disabled Gradient
+          </Button>
+        </div>
+      </section>
+
       {/* Secondary Buttons */}
       <section className="mb-12 bg-white p-6 rounded-md shadow-sm border border-sand-300">
         <h2 className="text-2xl font-semibold mb-4 text-primary-700 font-lora">
@@ -106,30 +127,6 @@ const AllButtons = () => {
           <Button variant="secondary">Secondary</Button>
           <Button variant="outline">Outline</Button>
           <Button variant="ghost">Ghost</Button>
-        </div>
-      </section>
-
-      {/* Interactive Examples */}
-      <section className="mb-12 bg-white p-6 rounded-md shadow-sm border border-sand-300">
-        <h2 className="text-2xl font-semibold mb-4 text-primary-700 font-lora">
-          Interactive Examples
-        </h2>
-        <div className="flex flex-wrap gap-4 items-center">
-          <Button variant="primary" onClick={() => alert("Primary clicked!")}>
-            Click Me (Primary)
-          </Button>
-          <Button
-            variant="secondary"
-            onClick={() => alert("Secondary clicked!")}
-          >
-            Click Me (Secondary)
-          </Button>
-          <Button variant="outline" onClick={() => alert("Outline clicked!")}>
-            Click Me (Outline)
-          </Button>
-          <Button variant="ghost" onClick={() => alert("Ghost clicked!")}>
-            Click Me (Ghost)
-          </Button>
         </div>
       </section>
 
