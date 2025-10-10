@@ -23,10 +23,10 @@ const Sidebar = ({ onComponentSelect, selectedComponent }: SidebarProps) => {
   }, {} as Record<string, typeof components>);
 
   const SidebarContent = () => (
-    <div className="h-full flex flex-col p-2">
+    <div className="h-full flex flex-col p-2 bg-white">
       <div className="p-4 border-gray-300">
-        <h2 className="text-2xl font-bold">All Components</h2>
-        <p className="text-sm text-foreground/60 mt-1">
+        <h2 className="text-2xl font-bold text-gray-700">All Components</h2>
+        <p className="text-sm text-gray-500 mt-1">
           Click to view component
         </p>
       </div>
@@ -35,7 +35,7 @@ const Sidebar = ({ onComponentSelect, selectedComponent }: SidebarProps) => {
       <div className="flex-1 overflow-y-auto p-4 scrollbar-hide">
         {Object.entries(groupedComponents).map(([category, items]) => (
           <div key={category} className="mb-6">
-            <h3 className="text-lg font-bold text-black mb-1">{category}</h3>
+            <h3 className="text-lg font-bold text-gray-700 mb-1">{category}</h3>
             <ul className="flex flex-col">
               {items.map((component) => (
                 <li key={component.name}>
@@ -74,7 +74,7 @@ const Sidebar = ({ onComponentSelect, selectedComponent }: SidebarProps) => {
       {/* Mobile Overlay */}
       {isOpen && (
         <div
-          className="lg:hidden fixed inset-0 bg-black/50 z-40"
+          className="lg:hidden fixed inset-0 bg-gray-700 z-40"
           onClick={() => setIsOpen(false)}
         />
       )}
