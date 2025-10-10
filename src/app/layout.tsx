@@ -1,24 +1,17 @@
 import type { Metadata } from "next";
-import {
-  Geist_Mono as FontMono,
-  Geist as FontSans,
-  Inter,
-} from "next/font/google";
+import { Inter, Lora } from "next/font/google";
 import "./globals.css";
-
-const fontSans = FontSans({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const fontMono = FontMono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const lora = Lora({
+  variable: "--font-lora",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -34,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${fontSans.variable} ${fontMono.variable} ${inter.variable} antialiased`}
+        className={`${inter.variable} ${lora.variable} font-sans antialiased bg-sand-50 text-gray-900`}
       >
         {children}
       </body>

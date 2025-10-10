@@ -4,15 +4,15 @@ import Button from "../components/Button";
 
 const AllButtons = () => {
   return (
-    <div className="p-8 max-w-6xl mx-auto">
-      <h1 className="text-4xl font-bold mb-2">All Button Variants</h1>
-      <p className="text-foreground/60 mb-8">
+    <div className="p-8 max-w-6xl mx-auto bg-sand-50">
+      <h1 className="text-4xl font-bold mb-2 text-primary-800 font-lora">All Button Variants</h1>
+      <p className="text-gray-600 mb-8">
         Explore all available button styles and sizes
       </p>
 
       {/* Primary Buttons */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4">Primary Buttons</h2>
+      <section className="mb-12 bg-white p-6 rounded-md shadow-sm border border-sand-200">
+        <h2 className="text-2xl font-semibold mb-4 text-primary-700 font-lora">Primary Buttons</h2>
         <div className="flex flex-wrap gap-4 items-center">
           <Button variant="primary" size="sm">
             Small Primary
@@ -30,8 +30,8 @@ const AllButtons = () => {
       </section>
 
       {/* Secondary Buttons */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4">Secondary Buttons</h2>
+      <section className="mb-12 bg-white p-6 rounded-md shadow-sm border border-sand-200">
+        <h2 className="text-2xl font-semibold mb-4 text-primary-700 font-lora">Secondary Buttons</h2>
         <div className="flex flex-wrap gap-4 items-center">
           <Button variant="secondary" size="sm">
             Small Secondary
@@ -49,8 +49,8 @@ const AllButtons = () => {
       </section>
 
       {/* Outline Buttons */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4">Outline Buttons</h2>
+      <section className="mb-12 bg-white p-6 rounded-md shadow-sm border border-sand-200">
+        <h2 className="text-2xl font-semibold mb-4 text-primary-700 font-lora">Outline Buttons</h2>
         <div className="flex flex-wrap gap-4 items-center">
           <Button variant="outline" size="sm">
             Small Outline
@@ -68,8 +68,8 @@ const AllButtons = () => {
       </section>
 
       {/* Ghost Buttons */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4">Ghost Buttons</h2>
+      <section className="mb-12 bg-white p-6 rounded-md shadow-sm border border-sand-200">
+        <h2 className="text-2xl font-semibold mb-4 text-primary-700 font-lora">Ghost Buttons</h2>
         <div className="flex flex-wrap gap-4 items-center">
           <Button variant="ghost" size="sm">
             Small Ghost
@@ -87,8 +87,8 @@ const AllButtons = () => {
       </section>
 
       {/* All Variants Comparison */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4">All Variants (Medium Size)</h2>
+      <section className="mb-12 bg-white p-6 rounded-md shadow-sm border border-sand-200">
+        <h2 className="text-2xl font-semibold mb-4 text-primary-700 font-lora">All Variants (Medium Size)</h2>
         <div className="flex flex-wrap gap-4 items-center">
           <Button variant="primary">Primary</Button>
           <Button variant="secondary">Secondary</Button>
@@ -98,8 +98,8 @@ const AllButtons = () => {
       </section>
 
       {/* Interactive Examples */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4">Interactive Examples</h2>
+      <section className="mb-12 bg-white p-6 rounded-md shadow-sm border border-sand-200">
+        <h2 className="text-2xl font-semibold mb-4 text-primary-700 font-lora">Interactive Examples</h2>
         <div className="flex flex-wrap gap-4 items-center">
           <Button variant="primary" onClick={() => alert("Primary clicked!")}>
             Click Me (Primary)
@@ -117,8 +117,8 @@ const AllButtons = () => {
       </section>
 
       {/* Custom Styling Example */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4">Custom Styling</h2>
+      <section className="mb-12 bg-white p-6 rounded-md shadow-sm border border-sand-200">
+        <h2 className="text-2xl font-semibold mb-4 text-primary-700 font-lora">Custom Styling</h2>
         <div className="flex flex-wrap gap-4 items-center">
           <Button variant="primary" className="rounded-full">
             Rounded Primary
