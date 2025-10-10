@@ -133,22 +133,22 @@ const AllButtons = () => {
       {/* Custom Styling Example */}
       <section className="mb-12 bg-white p-6 rounded-md shadow-sm border border-sand-300">
         <h2 className="text-2xl font-semibold mb-4 text-primary-700 font-lora">
-          Custom Styling
+          Custom Styling (Animated)
         </h2>
         <div className="flex flex-wrap gap-4 items-center">
-          <Button variant="primary" className="animate-slide-up">
-            Animated Primary
-          </Button>
-          <Button variant="secondary" className="animate-fade-in-left">
-            Shadow Ghost
-          </Button>
-          <Button variant="primary" className="rounded-full">
+          <Button variant="primary" className="!rounded-full animate-slide-up">
             Rounded Primary
           </Button>
-          <Button variant="secondary" className="rounded-none">
+          <Button
+            variant="secondary"
+            className="!rounded-none animate-fade-in-left [animation-delay:0.1s]"
+          >
             Square Secondary
           </Button>
-          <Button variant="outline" className="shadow-lg">
+          <Button
+            variant="outline"
+            className="shadow-lg animate-fade-in-down [animation-delay:0.2s]"
+          >
             Shadow Outline
           </Button>
         </div>

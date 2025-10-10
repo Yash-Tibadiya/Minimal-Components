@@ -159,6 +159,17 @@
     }
   }
 
+  @keyframes slide-up {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
   /* Animations */
   --animate-fade-in-up: fade-in-up 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
   --animate-fade-in-down: fade-in-down 0.6s cubic-bezier(0.23, 1, 0.32, 1)
@@ -168,6 +179,7 @@
   --animate-fade-in-right: fade-in-right 0.6s cubic-bezier(0.23, 1, 0.32, 1)
     forwards;
   --animate-draw-erase: draw-erase 6s ease-in-out infinite;
+  --animate-slide-up: slide-up 0.3s ease-out;
 }
 
 :root {
@@ -191,29 +203,16 @@ body {
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
-@keyframes slide-up {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-}
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.animate-slide-up {
-  animation: slide-up 0.3s ease-out;
-}
-
 /* Interactive Hover Animation - "Lift & Grow" */
 .interactive-card {
-  transition: transform 0.4s var(--ease-out-quint), box-shadow 0.4s var(--ease-out-quint);
+  transition: transform 0.4s var(--ease-out-quint),
+    box-shadow 0.4s var(--ease-out-quint);
 }
 
 .interactive-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.07),
+    0 4px 6px -4px rgb(0 0 0 / 0.07);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
