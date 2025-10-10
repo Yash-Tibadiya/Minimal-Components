@@ -5,6 +5,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Download,
+  Minus,
   Plus,
 } from "lucide-react";
 import Button from "../components/Button";
@@ -88,6 +89,14 @@ const SimpleButtons = () => {
             className="shadow-lg animate-fade-in-up [animation-delay:0.2s]"
           >
             Shadow Outline
+          </Button>
+          <Button
+            variant="primary"
+            leftIcon={<Plus />}
+            rightIcon={<Minus />}
+            className="w-52 !justify-between !bg-purple-500 animate-fade-in-left [animation-delay:0.3s] shadow-xl"
+          >
+            Add Item
           </Button>
         </div>
       </section>
