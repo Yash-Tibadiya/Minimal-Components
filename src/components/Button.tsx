@@ -5,7 +5,7 @@ import { ButtonHTMLAttributes, ReactNode } from "react";
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   variant?: "primary" | "secondary" | "outline" | "ghost" | "gradient" | "gradientSecondary";
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "xl";
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
 }
@@ -41,6 +41,7 @@ const Button = ({
     sm: "h-8 px-3 text-sm",
     md: "h-10 px-4 text-base",
     lg: "h-12 px-6 text-lg",
+    xl: "h-14 px-8 text-xl",
   };
 
   return (

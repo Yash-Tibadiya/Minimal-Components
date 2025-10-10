@@ -2,12 +2,15 @@
 
 import {
   ArrowRight,
+  Check,
   ChevronLeft,
   ChevronRight,
   Download,
+  FileWarning,
   Plus,
 } from "lucide-react";
 import Button from "../components/Button";
+import IconButton from "../components/IconButton";
 
 const AllButtons = () => {
   return (
@@ -107,6 +110,9 @@ const AllButtons = () => {
           <Button variant="primary" size="lg">
             Large Primary
           </Button>
+          <Button variant="primary" size="xl">
+            Large Primary
+          </Button>
           <Button variant="primary" size="md" disabled>
             Disabled Primary
           </Button>
@@ -126,6 +132,9 @@ const AllButtons = () => {
             Medium Secondary
           </Button>
           <Button variant="secondary" size="lg">
+            Large Secondary
+          </Button>
+          <Button variant="secondary" size="xl">
             Large Secondary
           </Button>
           <Button variant="secondary" size="md" disabled>
@@ -149,7 +158,10 @@ const AllButtons = () => {
           <Button variant="gradient" size="lg">
             Large Gradient
           </Button>
-          <Button variant="gradientSecondary" size="md" disabled>
+          <Button variant="gradientSecondary" size="xl">
+            Large Gradient
+          </Button>
+          <Button variant="gradient" size="md" disabled>
             Disabled Gradient
           </Button>
         </div>
@@ -168,6 +180,9 @@ const AllButtons = () => {
             Medium Outline
           </Button>
           <Button variant="outline" size="lg">
+            Large Outline
+          </Button>
+          <Button variant="outline" size="xl">
             Large Outline
           </Button>
           <Button variant="outline" size="md" disabled>
@@ -191,9 +206,207 @@ const AllButtons = () => {
           <Button variant="ghost" size="lg">
             Large Ghost
           </Button>
+          <Button variant="ghost" size="xl">
+            Large Ghost
+          </Button>
           <Button variant="ghost" size="md" disabled>
             Disabled Ghost
           </Button>
+        </div>
+      </section>
+
+      {/* Icon Buttons - Dedicated Component */}
+      <section className="mb-12 bg-white p-6 rounded-md shadow-sm border border-sand-300">
+        <h2 className="text-2xl font-semibold mb-4 text-primary-700 font-lora">
+          Icon Buttons (Dedicated Component)
+        </h2>
+        <p className="text-gray-600 mb-4 text-sm">
+          Dedicated IconButton component with customizable icon shapes
+          (rounded-lg, rounded-full), colors, sizes, and gap spacing.
+        </p>
+
+        <div className="space-y-6">
+          {/* Rounded LG variants */}
+          <div>
+            <h3 className="text-lg font-semibold mb-1 text-gray-700">
+              Rounded LG Shape
+            </h3>
+            <div className="flex flex-wrap gap-4 items-center">
+              <IconButton
+                icon={<Check className="h-4 shrink-0" />}
+                iconShape="rounded-lg"
+                iconColor="success"
+                size="sm"
+                gap="sm"
+              >
+                Pill Button Icon
+              </IconButton>
+              <IconButton
+                icon={<Plus />}
+                iconShape="rounded-lg"
+                iconColor="accent"
+                size="md"
+                gap="md"
+              >
+                Accent Highlight
+              </IconButton>
+              <IconButton
+                icon={<Download />}
+                iconShape="rounded-lg"
+                iconColor="primary"
+                size="lg"
+                gap="lg"
+              >
+                Large Download
+              </IconButton>
+              <IconButton
+                icon={<FileWarning className="h-8 w-auto shrink-0" />}
+                iconShape="rounded-lg"
+                iconColor="warning"
+                size="xl"
+                gap="xl"
+              >
+                Large Warning
+              </IconButton>
+            </div>
+          </div>
+
+          {/* Rounded Full variants */}
+          <div>
+            <h3 className="text-lg font-semibold mb-1 text-gray-700">
+              Rounded Full Shape
+            </h3>
+            <div className="flex flex-wrap gap-4 items-center">
+              <IconButton
+                icon={<Check className="h-4 shrink-0" />}
+                iconShape="rounded-full"
+                iconColor="success"
+                size="sm"
+                gap="sm"
+              >
+                Pill Button Icon
+              </IconButton>
+              <IconButton
+                icon={<Plus />}
+                iconShape="rounded-full"
+                iconColor="accent"
+                size="md"
+                gap="md"
+              >
+                Accent Highlight
+              </IconButton>
+              <IconButton
+                icon={<Download />}
+                iconShape="rounded-full"
+                iconColor="primary"
+                size="lg"
+                gap="lg"
+              >
+                Large Download
+              </IconButton>
+              <IconButton
+                icon={<FileWarning className="h-8 w-auto shrink-0" />}
+                iconShape="rounded-full"
+                iconColor="warning"
+                size="xl"
+                gap="xl"
+              >
+                Large Warning
+              </IconButton>
+            </div>
+          </div>
+
+          {/* Different Gap Sizes */}
+          <div>
+            <h3 className="text-lg font-semibold mb-1 text-gray-700">
+              Gap Variations (Medium Size)
+            </h3>
+            <div className="flex flex-wrap gap-4 items-center">
+              <IconButton
+                icon={<Check />}
+                iconShape="rounded-lg"
+                iconColor="accent"
+                size="md"
+                gap="sm"
+              >
+                Small Gap
+              </IconButton>
+              <IconButton
+                icon={<Check />}
+                iconShape="rounded-lg"
+                iconColor="accent"
+                size="md"
+                gap="md"
+              >
+                Medium Gap
+              </IconButton>
+              <IconButton
+                icon={<Check />}
+                iconShape="rounded-lg"
+                iconColor="accent"
+                size="md"
+                gap="lg"
+              >
+                Large Gap
+              </IconButton>
+              <IconButton
+                icon={<Check />}
+                iconShape="rounded-lg"
+                iconColor="accent"
+                size="md"
+                gap="xl"
+              >
+                Extra Large Gap
+              </IconButton>
+            </div>
+          </div>
+
+          {/* Custom Styles */}
+          <div>
+            <h3 className="text-lg font-semibold mb-1 text-gray-700">
+              Custom Styles
+            </h3>
+            <div className="flex flex-wrap gap-4 items-center">
+              <IconButton
+                icon={<Check />}
+                iconShape="rounded-full"
+                iconColor="primary"
+                size="md"
+                gap="md"
+                className="w-60 rounded-full px-5"
+              >
+                Primary
+              </IconButton>
+              <IconButton
+                icon={<Plus />}
+                iconShape="rounded-lg"
+                iconColor="accent"
+                size="md"
+                gap="md"
+                className="!bg-sand-200 w-52 justify-between !text-3xl"
+              >
+                Accent
+              </IconButton>
+              <IconButton
+                icon={<Check />}
+                iconShape="rounded-lg"
+                iconColor="success"
+                size="md"
+                gap="md"
+              >
+                Success
+              </IconButton>
+              <IconButton
+                icon={<Download />}
+                iconShape="rounded-lg"
+                iconColor="warning"
+                size="md"
+                gap="md"
+              >
+                Warning
+              </IconButton>
+            </div>
+          </div>
         </div>
       </section>
     </div>
