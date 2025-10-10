@@ -4,20 +4,28 @@ import { ButtonHTMLAttributes, ReactNode } from "react";
 
 interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  icon: ReactNode;
-  iconShape?: "rounded-lg" | "rounded-full";
-  iconColor?: "primary" | "accent" | "success" | "warning";
-  iconBgColor?: string;
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
+  leftIconShape?: "rounded-lg" | "rounded-full";
+  leftIconColor?: "primary" | "accent" | "success" | "warning";
+  leftIconBgColor?: string;
+  rightIconShape?: "rounded-lg" | "rounded-full";
+  rightIconColor?: "primary" | "accent" | "success" | "warning";
+  rightIconBgColor?: string;
   size?: "sm" | "md" | "lg" | "xl";
   gap?: "sm" | "md" | "lg" | "xl";
 }
 
 const IconButton = ({
   children,
-  icon,
-  iconShape = "rounded-lg",
-  iconColor = "accent",
-  iconBgColor,
+  leftIcon,
+  rightIcon,
+  leftIconShape = "rounded-lg",
+  leftIconColor = "accent",
+  leftIconBgColor,
+  rightIconShape,
+  rightIconColor,
+  rightIconBgColor,
   size = "md",
   gap = "md",
   className = "",
@@ -45,7 +53,6 @@ const IconButton = ({
     md: "gap-3",
     lg: "gap-4",
     xl: "gap-5",
-
   };
 
   const textSizes = {
@@ -55,20 +62,40 @@ const IconButton = ({
     xl: "text-xl",
   };
 
-  // Determine icon background color - custom takes precedence
-  const iconBgClass = iconBgColor || iconColors[iconColor];
+  // Determine icon background colors - custom takes precedence
+  const leftIconBgClass = leftIconBgColor || iconColors[leftIconColor];
+  const rightIconBgClass =
+    rightIconBgColor || iconColors[rightIconColor || leftIconColor];
+  const rightIconShapeClass = rightIconShape || leftIconShape;
 
   return (
     <button
       className={`${baseStyles} ${gapSizes[gap]} ${className}`}
       {...props}
     >
+      {leftIcon && (
+        <span
+          className={`inline-flex items-center justify-center shrink-0 ${iconSizes[size]} ${leftIconShape} ${leftIconBgClass}`}
+        >
+          {leftIcon}
+        </span>
+      )}
       <span
-        className={`inline-flex items-center justify-center shrink-0 ${iconSizes[size]} ${iconShape} ${iconBgClass}`}
+        className={`font-medium ${
+          !className.includes("!text-") && !className.includes("text-")
+            ? textSizes[size]
+            : ""
+        }`}
       >
-        {icon}
+        {children}
       </span>
-      <span className={`font-medium ${!className.includes('!text-') && !className.includes('text-') ? textSizes[size] : ''}`}>{children}</span>
+      {rightIcon && (
+        <span
+          className={`inline-flex items-center justify-center shrink-0 ${iconSizes[size]} ${rightIconShapeClass} ${rightIconBgClass}`}
+        >
+          {rightIcon}
+        </span>
+      )}
     </button>
   );
 };

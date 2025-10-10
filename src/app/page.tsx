@@ -2,19 +2,24 @@
 
 import { useState } from "react";
 import Sidebar from "@/components/Sidebar";
-import AllButtons from "@/pages/AllButtons";
+import IconButtons from "@/pages/IconButtons";
+import SimpleButtons from "@/pages/SimpleButtons";
 
 export default function Home() {
   const [selectedComponent, setSelectedComponent] = useState("All Button");
 
   const renderComponent = () => {
     switch (selectedComponent) {
-      case "All Button":
-        return <AllButtons />;
+      case "Simple Button":
+        return <SimpleButtons />;
+      case "Icon Button":
+        return <IconButtons />;
       default:
         return (
           <div className="p-8">
-            <h1 className="text-2xl font-bold">Select a component from the sidebar</h1>
+            <h1 className="text-2xl font-bold">
+              Select a component from the sidebar
+            </h1>
           </div>
         );
     }
@@ -26,9 +31,7 @@ export default function Home() {
         onComponentSelect={setSelectedComponent}
         selectedComponent={selectedComponent}
       />
-      <main className="flex-1 overflow-y-auto">
-        {renderComponent()}
-      </main>
+      <main className="flex-1 overflow-y-auto">{renderComponent()}</main>
     </div>
   );
 }

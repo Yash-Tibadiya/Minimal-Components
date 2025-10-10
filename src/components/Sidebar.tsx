@@ -8,7 +8,10 @@ interface SidebarProps {
   selectedComponent: string;
 }
 
-const components = [{ name: "All Button", category: "Button" }];
+const components = [
+  { name: "Simple Button", category: "Button" },
+  { name: "Icon Button", category: "Button" },
+];
 
 const Sidebar = ({ onComponentSelect, selectedComponent }: SidebarProps) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,9 +29,7 @@ const Sidebar = ({ onComponentSelect, selectedComponent }: SidebarProps) => {
     <div className="h-full flex flex-col p-2 bg-white">
       <div className="p-4 border-gray-300">
         <h2 className="text-2xl font-bold text-gray-700">All Components</h2>
-        <p className="text-sm text-gray-500 mt-1">
-          Click to view component
-        </p>
+        <p className="text-sm text-gray-500 mt-1">Click to view component</p>
       </div>
       <div className="border-b-2 border-dashed border-gray-300 mx-3"></div>
 
@@ -66,8 +67,9 @@ const Sidebar = ({ onComponentSelect, selectedComponent }: SidebarProps) => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`lg:hidden fixed top-4 right-4 z-50 p-2 rounded-md text-gray-700 hover:bg-sand-400 transition-colors"
-        aria-label="Toggle menu ${isOpen ? "text-white hover:text-gray-700" : ""}`
-      }
+        aria-label="Toggle menu ${
+          isOpen ? "text-white hover:text-gray-700" : ""
+        }`}
       >
         {isOpen ? <XSquareIcon /> : <MenuSquare />}
       </button>
