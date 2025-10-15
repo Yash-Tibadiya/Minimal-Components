@@ -4,6 +4,7 @@ import { useState } from "react";
 import Sidebar from "@/components/Sidebar";
 import IconButtons from "@/pages/IconButtons";
 import SimpleButtons from "@/pages/SimpleButtons";
+import Badges from "@/pages/Badges";
 
 export default function Home() {
   const [selectedComponent, setSelectedComponent] = useState("All Button");
@@ -14,6 +15,8 @@ export default function Home() {
         return <SimpleButtons />;
       case "Icon Button":
         return <IconButtons />;
+      case "Badge":
+        return <Badges />;
       default:
         return (
           <div className="p-8">

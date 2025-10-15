@@ -11,6 +11,7 @@ interface SidebarProps {
 const components = [
   { name: "Simple Button", category: "Button" },
   { name: "Icon Button", category: "Button" },
+  { name: "Badge", category: "Badge" },
 ];
 
 const Sidebar = ({ onComponentSelect, selectedComponent }: SidebarProps) => {
