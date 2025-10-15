@@ -5,6 +5,7 @@ import Sidebar from "@/components/Sidebar";
 import IconButtons from "@/pages/IconButtons";
 import SimpleButtons from "@/pages/SimpleButtons";
 import Badges from "@/pages/Badges";
+import ProcessingPage from "@/pages/ProcessingPage";
 
 export default function Home() {
   const [selectedComponent, setSelectedComponent] = useState("All Button");
@@ -17,6 +18,8 @@ export default function Home() {
         return <IconButtons />;
       case "Badge":
         return <Badges />;
+      case "Processing Page":
+        return <ProcessingPage />;
       default:
         return (
           <div className="p-8">
