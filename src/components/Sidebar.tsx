@@ -12,6 +12,7 @@ const components = [
   { name: "Simple Button", category: "Button" },
   { name: "Icon Button", category: "Button" },
   { name: "Badge", category: "Badge" },
+  { name: "Alert", category: "Alert" },
   { name: "Processing Page", category: "Processing" },
 ];
 

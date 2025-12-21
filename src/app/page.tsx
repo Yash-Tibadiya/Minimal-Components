@@ -5,10 +5,11 @@ import Sidebar from "@/components/Sidebar";
 import IconButtons from "@/pages/IconButtons";
 import SimpleButtons from "@/pages/SimpleButtons";
 import Badges from "@/pages/Badges";
+import Alerts from "@/pages/Alerts";
 import ProcessingPage from "@/pages/ProcessingPage";
 
 export default function Home() {
-  const [selectedComponent, setSelectedComponent] = useState("All Button");
+  const [selectedComponent, setSelectedComponent] = useState("Alert");
 
   const renderComponent = () => {
     switch (selectedComponent) {
@@ -18,6 +19,8 @@ export default function Home() {
         return <IconButtons />;
       case "Badge":
         return <Badges />;
+      case "Alert":
+        return <Alerts />;
       case "Processing Page":
         return <ProcessingPage />;
       default:
